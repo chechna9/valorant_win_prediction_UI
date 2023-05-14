@@ -1,9 +1,12 @@
+import { useState } from "react";
 import CustomButton from "../../components/custom_button";
+import LoadingSpinner from "../../components/loadingSpinner";
 
 const SimulationPage = () => {
+    const [loading,setLoading] = useState(false);
   return (
-    <div className="bg-myDark h-screen flex flex-col">
-      <div className="flex p-4 flex-auto">
+    <div className="bg-myDark h-screen">
+      <div className="flex p-4 h-[80vh]">
         {/* team 1 */}
         <div className="bg-myLight flex-auto"></div>
         {/* map*/}
@@ -12,7 +15,13 @@ const SimulationPage = () => {
         <div className="bg-myLight flex-auto"></div>
       </div>
 
-      <CustomButton>Simulate</CustomButton>
+      <div className="flex justify-center">{
+        loading && <LoadingSpinner/>
+      }
+       { !loading && <CustomButton onClick={()=>{
+            console.log("calling the api");
+        }}>Simulate</CustomButton>}
+      </div>
     </div>
   );
 };
