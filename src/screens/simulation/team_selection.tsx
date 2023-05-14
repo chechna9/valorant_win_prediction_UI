@@ -1,5 +1,7 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import Switch from "@mui/material/Switch";
+import { AgentEnum } from "../../utils/enums/agents_enum";
+import { all_agents } from "../../utils/consts";
 
 interface props {
   team: String;
@@ -30,9 +32,12 @@ const TeamSelection: React.FC<props> = (props) => {
             label="Agent"
             // onChange={handleChange}
           >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
+            {/* <MenuItem value={10}>Ten</MenuItem> */}
+            {
+                all_agents.map((e)=><MenuItem value={e.agent}>{e.agent}</MenuItem>)
+            }
+            
+            
           </Select>
         </FormControl>
        
