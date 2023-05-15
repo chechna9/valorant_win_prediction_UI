@@ -52,7 +52,7 @@ const AddAgentBox = () => {
         </div>
       )}
       {chosen && currentAgent && (
-        <div>
+        <div className="bg-cyan-200 h-full">
           <button
             className="absolute top-0 right-0 w-4 h-4 bg-myLight rounded-full flex justify-center items-center text-xs"
             onClick={() => removeAgent()}
@@ -61,7 +61,7 @@ const AddAgentBox = () => {
           </button>
           <img
             src={currentAgent.img}
-            className="h-full w-full object-fill"
+            className="h-full w-full object-cover"
             alt=""
           />
         </div>
