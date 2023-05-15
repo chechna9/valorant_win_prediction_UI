@@ -1,70 +1,75 @@
+import { astra, breach, brimstone, chamber, cypher, jett, kayo, killjoy, omen, phoenix, raze, reyna, sage, skye, sova, viper, yoru } from "./assets";
 import { AgentEnum } from "./enums/agents_enum";
 import { AgentInterface } from "./interfaces/agent_interface";
 
 const all_agents :Array<AgentInterface> = [
     {
         agent:AgentEnum.jett,
-        img:""
+        img:jett
     },
     {
         agent:AgentEnum.chamber,
-        img:""
+        img:chamber
     },
     {
         agent:AgentEnum.sova,
-        img:""
+        img:sova
     },
     {
         agent:AgentEnum.viper,
-        img:""
+        img:viper
     },
     {
         agent:AgentEnum.skye,
-        img:""
+        img:skye
     },
     {
         agent:AgentEnum.astra,
-        img:""
+        img:astra
     },
     {
         agent:AgentEnum.raze,
-        img:""
+        img:raze
     },
     {
         agent:AgentEnum.sage,
-        img:""
+        img:sage
     },
     {
         agent:AgentEnum.kayo,
-        img:""
+        img:kayo
     },
     {
         agent:AgentEnum.killjoy,
-        img:""
+        img:killjoy
     },
     {
         agent:AgentEnum.reyna,
-        img:""
+        img:reyna
     },
     {
         agent:AgentEnum.cypher,
-        img:""
+        img:cypher
     },
     {
         agent:AgentEnum.breach,
-        img:""
+        img:breach
     },
     {
         agent:AgentEnum.brimstone,
-        img:""
+        img:brimstone
     },
     {
         agent:AgentEnum.phoenix,
-        img:""
+        img:phoenix
     },
     {
         agent:AgentEnum.yoru,
-        img:""
+        img:yoru
+    },
+    {
+        agent:AgentEnum.omen,
+        img:omen
     }
 ];
 export  {all_agents};
