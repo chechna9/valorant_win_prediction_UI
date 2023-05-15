@@ -1,6 +1,6 @@
 import  { createContext } from 'react';
 
-import { TeamInterface } from './interfaces/team_interface';
+import { TeamInterface } from '../interfaces/team_interface';
 
 interface TeamContextInterface{
     team1:TeamInterface;

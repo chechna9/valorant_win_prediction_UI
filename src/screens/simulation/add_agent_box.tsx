@@ -1,15 +1,25 @@
 import { useState } from "react";
 import { addIcon } from "../../utils/assets";
-import { all_agents } from "../../utils/consts";
 import { AgentInterface } from "../../utils/interfaces/agent_interface";
-
-const AddAgentBox = () => {
+interface AddAgentBoxInterface {
+  dispAgents: AgentInterface[];
+  setDispAgents: React.Dispatch<React.SetStateAction<AgentInterface[]>>;
+}
+const AddAgentBox = (props: AddAgentBoxInterface) => {
   const selectAgent = (agent: AgentInterface) => {
+    let tempDisp = props.dispAgents;
+    // deleting the agent
+    tempDisp.splice(tempDisp.indexOf(agent), 1);
+    props.setDispAgents(tempDisp);
     setShowList(false);
     setChosen(true);
     setCurrentAgent(agent);
   };
-  const removeAgent = () => {
+  const removeAgent = (agent:AgentInterface) => {
+    let tempDisp = props.dispAgents;
+    // adding the agent
+    tempDisp.push(agent)
+    props.setDispAgents(tempDisp);
     setCurrentAgent(null);
     setChosen(false);
   };
@@ -33,9 +43,9 @@ const AddAgentBox = () => {
           </button>
           {/* list of agents to select */}
           {showList && (
-            <div className="bg-myLight2 p-4 absolute left-[50%]  -translate-x-[50%] rounded-lg w-[30vw]">
+            <div className="bg-myLight2 p-4 absolute left-[50%]  -translate-x-[50%] rounded-lg w-[30vw] z-10">
               <ol className="flex flex-wrap">
-                {all_agents.map((agent) => (
+                {props.dispAgents.map((agent) => (
                   <li className="m-1">
                     <button onClick={() => selectAgent(agent)}>
                       <img
@@ -55,7 +65,7 @@ const AddAgentBox = () => {
         <div className="bg-cyan-200 h-full">
           <button
             className="absolute top-0 right-0 w-4 h-4 bg-myLight rounded-full flex justify-center items-center text-xs"
-            onClick={() => removeAgent()}
+            onClick={() => removeAgent(currentAgent)}
           >
             x
           </button>
