@@ -1,18 +1,15 @@
-import { AgentEnum } from "../../utils/enums/agents_enum";
-import { all_agents } from "../../utils/consts";
 import AddAgentBox from "./add_agent_box";
 import ToggleSwitch from "../../components/toggle";
 import { AgentInterface } from "../../utils/interfaces/agent_interface";
 
 interface props {
-  team: String;
+  team: string;
   isAttacker: boolean;
   switchAttack: () => void;
-  dispAgents:AgentInterface[];
-  setDispAgents:React.Dispatch<React.SetStateAction<AgentInterface[]>>;
+  dispAgents: AgentInterface[];
+  setDispAgents: React.Dispatch<React.SetStateAction<AgentInterface[]>>;
 }
 const TeamSelection: React.FC<props> = (props) => {
-  
   return (
     <div className="flex flex-col items-center">
       <div>
@@ -20,7 +17,6 @@ const TeamSelection: React.FC<props> = (props) => {
         <div>
           <h2 className="text-white font-medium">Attacks first</h2>
           <ToggleSwitch
-          
             checked={props.isAttacker}
             onChange={props.switchAttack}
           />
@@ -28,11 +24,31 @@ const TeamSelection: React.FC<props> = (props) => {
       </div>
       {/* select agents */}
       <div>
-        <AddAgentBox dispAgents={props.dispAgents} setDispAgents={props.setDispAgents} />
-        <AddAgentBox dispAgents={props.dispAgents} setDispAgents={props.setDispAgents} />
-        <AddAgentBox dispAgents={props.dispAgents} setDispAgents={props.setDispAgents} />
-        <AddAgentBox dispAgents={props.dispAgents} setDispAgents={props.setDispAgents} />
-        <AddAgentBox dispAgents={props.dispAgents} setDispAgents={props.setDispAgents} />
+        <AddAgentBox
+          dispAgents={props.dispAgents}
+          setDispAgents={props.setDispAgents}
+          team={props.team}
+        />
+        <AddAgentBox
+          dispAgents={props.dispAgents}
+          setDispAgents={props.setDispAgents}
+          team={props.team}
+        />
+        <AddAgentBox
+          dispAgents={props.dispAgents}
+          setDispAgents={props.setDispAgents}
+          team={props.team}
+        />
+        <AddAgentBox
+          dispAgents={props.dispAgents}
+          setDispAgents={props.setDispAgents}
+          team={props.team}
+        />
+        <AddAgentBox
+          dispAgents={props.dispAgents}
+          setDispAgents={props.setDispAgents}
+          team={props.team}
+        />
       </div>
     </div>
   );

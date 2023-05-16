@@ -1,34 +1,63 @@
 import { useState, useEffect, useRef } from "react";
 import { addIcon } from "../../utils/assets";
 import { AgentInterface } from "../../utils/interfaces/agent_interface";
+import { useContext } from "react";
+import Team1Context from "../../utils/contexts/team1_context";
+import Team2Context from "../../utils/contexts/team2_context";
 interface AddAgentBoxInterface {
+  team: string;
   dispAgents: AgentInterface[];
   setDispAgents: React.Dispatch<React.SetStateAction<AgentInterface[]>>;
 }
 const AddAgentBox = (props: AddAgentBoxInterface) => {
+  // context
+  const t1CTX = useContext(Team1Context);
+  const t2CTX = useContext(Team2Context);
+  const isT1 = props.team === "1";
+  // state
+  const [chosen, setChosen] = useState(false);
+  const [showList, setShowList] = useState(false);
+  const [currentAgent, setCurrentAgent] = useState<AgentInterface | null>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  // functions
   const selectAgent = (agent: AgentInterface) => {
     let tempDisp = props.dispAgents;
-    // deleting the agent
+    // deleting the agent from the disp agents and add it to the current agent
     tempDisp.splice(tempDisp.indexOf(agent), 1);
     props.setDispAgents(tempDisp);
+    if (isT1) {
+      t1CTX?.setTeam1({ agents: [...t1CTX.team1.agents, agent] });
+    }
+    if (!isT1) {
+      t2CTX?.setTeam2({ agents: [...t2CTX.team2.agents, agent] });
+    }
     setShowList(false);
     setChosen(true);
     setCurrentAgent(agent);
   };
   const removeAgent = (agent: AgentInterface) => {
     let tempDisp = props.dispAgents;
-    // adding the agent
+    // adding the agent to the disp agents and remove it from the current agent
+    if (isT1 && t1CTX) {
+      let prevAgents = t1CTX.team1.agents;
+      prevAgents.splice(prevAgents.indexOf(agent), 1);
+      t1CTX?.setTeam1({ agents: prevAgents });
+    }
+    if (!isT1 && t2CTX) {
+      let prevAgents = t2CTX.team2.agents;
+      prevAgents.splice(prevAgents.indexOf(agent), 1);
+      t2CTX.setTeam2({
+        agents: prevAgents,
+      });
+    }
     tempDisp.push(agent);
     props.setDispAgents(tempDisp);
     setCurrentAgent(null);
     setChosen(false);
   };
-  // state
-  const [chosen, setChosen] = useState(false);
-  const [showList, setShowList] = useState(false);
-  const [currentAgent, setCurrentAgent] = useState<AgentInterface | null>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  // close the list when clicking outside 
+
+  // close the list when clicking outside
   const handleClickOutside = (event: MouseEvent) => {
     if (
       buttonRef.current &&

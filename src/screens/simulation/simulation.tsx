@@ -56,7 +56,7 @@ const SimulationPage = () => {
           <div className="flex justify-center">
             <CustomButton
               onClick={() => {
-                console.log("calling the api");
+                console.log(team1.agents);
               }}
             >
               {loading && <LoadingSpinner />}
