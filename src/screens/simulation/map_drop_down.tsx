@@ -10,15 +10,15 @@ const MapDropDown = (props:MapDropDownProps) => {
   
   const [open, setOpen] = useState(false);
   return (
-    <div className="mx-auto max-w-xs bg-myDark2 p-2 rounded-3xl">
+    <div className="mx-auto bg-myDark2 p-2 rounded-3xl">
       <button
-        className="mx-auto flex justify-center items-center text-white font-medium"
+        className="mx-auto flex sm:flex-row flex-col justify-center items-center text-white font-medium text-xs sm:text-lg"
         onClick={() => {
           setOpen(!open);
         }}
       >
         {props.map.name}
-        <img src={props.map.img} className="ml-2 w-10 h-10 sm:w-16 sm:h-16 object-cover rounded-lg" alt="" />
+        <img src={props.map.img} className="ml-2 w-10 h-10 md:w-16 md:h-16 object-cover rounded-lg" alt="" />
       </button>
       {open && (
         <ul className="">
@@ -28,12 +28,12 @@ const MapDropDown = (props:MapDropDownProps) => {
                 <li
                 onClick={()=>props.setMap(_map)}
                   key={index}
-                  className="mx-auto flex justify-between items-center text-white font-medium mt-1 cursor-pointer hover:bg-myLight2"
+                  className="mx-auto flex flex-row sm:justify-between justify-center  items-center text-white font-medium mt-1 cursor-pointer hover:bg-myLight2"
                 >
                   {_map.name}
                   <img
                     src={_map.img}
-                    className="ml-2 w-8 h-8 sm:w-10 sm:h-10 object-cover rounded-md"
+                    className="ml-2 w-8 h-8 sm:w-10 sm:h-10 object-cover rounded-md hidden sm:block"
                     alt=""
                   />
                 </li>

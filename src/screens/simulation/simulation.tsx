@@ -30,8 +30,8 @@ const SimulationPage = () => {
   return (
     <Team1Context.Provider value={team1Value}>
       <Team2Context.Provider value={team2Value}>
-        <div className="bg-myDark h-screen">
-          <div className="flex p-4 h-[80vh]">
+        <div className="bg-myDark min-h-screen relative overflow-clip flex flex-col justify-around ">
+          <div className="flex justify-between p-4">
             {/* team 1 */}
             <div className="sm:w-[40vw] w-[30vw]">
               <TeamSelection
@@ -43,11 +43,11 @@ const SimulationPage = () => {
               />
             </div>
             {/* map*/}
-            <div className="flex-auto">
+            <div className="sm:flex-auto w-[20vw] ">
               <MapDropDown map={map} setMap={setMap} />
             </div>
             {/* team 2 */}
-            <div className="sm:w-[40vw] w-[30vw]">
+            <div className="sm:w-[40vw] w-[30vw] ">
               <TeamSelection
                 switchAttack={() => setTeam1Attack(!team1Attack)}
                 team="2"
@@ -58,7 +58,7 @@ const SimulationPage = () => {
             </div>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center ">
             <CustomButton
               onClick={() => {
                 console.log(team1.agents);
@@ -68,6 +68,7 @@ const SimulationPage = () => {
               {!loading && "Simulate"}
             </CustomButton>
           </div>
+          <h1 className="text-white absolute right-2 bottom-2 -rotate-45">Beta</h1>
         </div>
       </Team2Context.Provider>
     </Team1Context.Provider>

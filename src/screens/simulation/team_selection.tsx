@@ -14,7 +14,7 @@ const TeamSelection: React.FC<props> = (props) => {
   return (
     <div className="flex flex-col items-center">
       <div>
-        <h1 className="text-white text-2xl font-bold">Team {props.team}</h1>
+        <h1 className="text-white sm:text-2xl text-md font-bold">Team {props.team}</h1>
         <div className="mt-2">
          
           <ToggleSwitch

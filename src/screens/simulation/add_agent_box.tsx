@@ -75,7 +75,7 @@ const AddAgentBox = (props: AddAgentBoxInterface) => {
   }, [props.dispAgents]);
 
   return (
-    <div className=" max-w-[150px] m-2 max-h-[150px] w-[15vw] h-[15vw] bg-myDark2 flex flex-col justify-center items-center relative rounded-xl">
+    <div className=" max-w-[150px] m-2 max-h-[150px] w-[15vw] h-[15vw] bg-myDark2 flex flex-col justify-center items-center  rounded-xl">
       {!chosen && (
         <div>
           <button
@@ -93,13 +93,13 @@ const AddAgentBox = (props: AddAgentBoxInterface) => {
           {/* list of agents to select */}
 
           {showList && (
-            <div className="bg-myLight2 p-4 absolute left-[50%]  -translate-x-[50%] rounded-lg w-[30vw] z-10">
-              <ol className="flex flex-wrap">
+            <div className="bg-myLight2 p-4 absolute rounded-lg sm:max-w-[50vw] w-[90vw]  z-20 top-2 left-[50%] -translate-x-[50%] shadow-sm shadow-white ">
+              <ol className="flex flex-wrap justify-center">
                 {props.dispAgents.map((agent, index) => (
                   <li className="m-1" key={index}>
                     <button onClick={() => selectAgent(agent)}>
                       <img
-                        className="h-10 w-10 object-cover rounded-xl"
+                        className="h-16 w-16 object-cover rounded-xl"
                         src={agent.img}
                         alt=""
                       />
@@ -112,7 +112,7 @@ const AddAgentBox = (props: AddAgentBoxInterface) => {
         </div>
       )}
       {chosen && currentAgent && (
-        <div className="h-full hover:scale-110 transition-all duration-300">
+        <div className="h-full hover:scale-110 transition-all duration-300 relative">
           <button
             className="absolute top-0 right-0 w-4 h-4 bg-myLight rounded-full flex justify-center items-center text-xs"
             onClick={() => removeAgent(currentAgent)}
