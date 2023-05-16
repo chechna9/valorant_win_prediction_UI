@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { addIcon } from "../../utils/assets";
 import { AgentInterface } from "../../utils/interfaces/agent_interface";
 interface AddAgentBoxInterface {
@@ -15,22 +15,42 @@ const AddAgentBox = (props: AddAgentBoxInterface) => {
     setChosen(true);
     setCurrentAgent(agent);
   };
-  const removeAgent = (agent:AgentInterface) => {
+  const removeAgent = (agent: AgentInterface) => {
     let tempDisp = props.dispAgents;
     // adding the agent
-    tempDisp.push(agent)
+    tempDisp.push(agent);
     props.setDispAgents(tempDisp);
     setCurrentAgent(null);
     setChosen(false);
   };
+  // state
   const [chosen, setChosen] = useState(false);
   const [showList, setShowList] = useState(false);
   const [currentAgent, setCurrentAgent] = useState<AgentInterface | null>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  // close the list when clicking outside 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      buttonRef.current &&
+      !buttonRef.current.contains(event.target as Node)
+    ) {
+      setShowList(false);
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [props.dispAgents]);
+
   return (
     <div className="w-28 h-28 bg-myDark2 flex flex-col justify-center items-center relative">
       {!chosen && (
         <div>
           <button
+            ref={buttonRef}
             onClick={() => {
               setShowList(!showList);
             }}
@@ -42,11 +62,12 @@ const AddAgentBox = (props: AddAgentBoxInterface) => {
             />
           </button>
           {/* list of agents to select */}
+
           {showList && (
             <div className="bg-myLight2 p-4 absolute left-[50%]  -translate-x-[50%] rounded-lg w-[30vw] z-10">
               <ol className="flex flex-wrap">
-                {props.dispAgents.map((agent) => (
-                  <li className="m-1">
+                {props.dispAgents.map((agent, index) => (
+                  <li className="m-1" key={index}>
                     <button onClick={() => selectAgent(agent)}>
                       <img
                         className="h-10 w-10 object-cover"
