@@ -5,13 +5,16 @@ import TeamSelection from "./team_selection";
 import { TeamInterface } from "../../utils/interfaces/team_interface";
 
 import { AgentInterface } from "../../utils/interfaces/agent_interface";
-import { all_agents } from "../../utils/consts";
+import { all_agents, all_maps } from "../../utils/consts";
 import Team1Context from "../../utils/contexts/team1_context";
 import Team2Context from "../../utils/contexts/team2_context";
+import MapDropDown from "./map_drop_down";
+import MapInterface from "../../utils/interfaces/map_interface";
 
 const SimulationPage = () => {
   const [loading, setLoading] = useState(false);
   const [team1Attack, setTeam1Attack] = useState(false);
+  const [map, setMap] = useState<MapInterface>(all_maps[0]);
   const [team1, setTeam1] = useState<TeamInterface>({ agents: [] });
   const [team2, setTeam2] = useState<TeamInterface>({ agents: [] });
   const [dispAgents1, setDispAgents1] = useState<AgentInterface[]>(
@@ -40,7 +43,9 @@ const SimulationPage = () => {
               />
             </div>
             {/* map*/}
-            <div className="bg-myLight2 flex-auto"></div>
+            <div className="bg-myLight2 flex-auto">
+              <MapDropDown map={map} setMap={setMap}/>
+            </div>
             {/* team 2 */}
             <div className="bg-myLight flex-auto">
               <TeamSelection
