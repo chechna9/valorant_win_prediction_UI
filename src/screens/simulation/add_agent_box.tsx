@@ -75,7 +75,7 @@ const AddAgentBox = (props: AddAgentBoxInterface) => {
   }, [props.dispAgents]);
 
   return (
-    <div className="w-28 h-28 bg-myDark2 flex flex-col justify-center items-center relative">
+    <div className=" max-w-[150px] m-2 max-h-[150px] w-[15vw] h-[15vw] bg-myDark2 flex flex-col justify-center items-center relative rounded-xl">
       {!chosen && (
         <div>
           <button
@@ -99,7 +99,7 @@ const AddAgentBox = (props: AddAgentBoxInterface) => {
                   <li className="m-1" key={index}>
                     <button onClick={() => selectAgent(agent)}>
                       <img
-                        className="h-10 w-10 object-cover"
+                        className="h-10 w-10 object-cover rounded-xl"
                         src={agent.img}
                         alt=""
                       />
@@ -112,7 +112,7 @@ const AddAgentBox = (props: AddAgentBoxInterface) => {
         </div>
       )}
       {chosen && currentAgent && (
-        <div className="bg-cyan-200 h-full">
+        <div className="h-full hover:scale-110 transition-all duration-300">
           <button
             className="absolute top-0 right-0 w-4 h-4 bg-myLight rounded-full flex justify-center items-center text-xs"
             onClick={() => removeAgent(currentAgent)}
@@ -121,7 +121,7 @@ const AddAgentBox = (props: AddAgentBoxInterface) => {
           </button>
           <img
             src={currentAgent.img}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover rounded-xl shadow-sm shadow-slate-300  hover:shadow-lg transition-all duration-300"
             alt=""
           />
         </div>

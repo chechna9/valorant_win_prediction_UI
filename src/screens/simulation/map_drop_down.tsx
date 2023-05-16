@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import MapInterface from "../../utils/interfaces/map_interface";
 import { all_maps } from "../../utils/consts";
 
@@ -18,7 +18,7 @@ const MapDropDown = (props:MapDropDownProps) => {
         }}
       >
         {props.map.name}
-        <img src={props.map.img} className="ml-2 w-16 h-16 object-cover" alt="" />
+        <img src={props.map.img} className="ml-2 w-10 h-10 sm:w-16 sm:h-16 object-cover rounded-lg" alt="" />
       </button>
       {open && (
         <ul className="">
@@ -33,7 +33,7 @@ const MapDropDown = (props:MapDropDownProps) => {
                   {_map.name}
                   <img
                     src={_map.img}
-                    className="ml-2 w-10 h-10 object-cover"
+                    className="ml-2 w-8 h-8 sm:w-10 sm:h-10 object-cover rounded-md"
                     alt=""
                   />
                 </li>

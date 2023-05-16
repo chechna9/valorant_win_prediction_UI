@@ -33,7 +33,7 @@ const SimulationPage = () => {
         <div className="bg-myDark h-screen">
           <div className="flex p-4 h-[80vh]">
             {/* team 1 */}
-            <div className="bg-myLight flex-auto">
+            <div className="sm:w-[40vw] w-[30vw]">
               <TeamSelection
                 switchAttack={() => setTeam1Attack(!team1Attack)}
                 team="1"
@@ -43,11 +43,11 @@ const SimulationPage = () => {
               />
             </div>
             {/* map*/}
-            <div className="bg-myLight2 flex-auto">
-              <MapDropDown map={map} setMap={setMap}/>
+            <div className="flex-auto">
+              <MapDropDown map={map} setMap={setMap} />
             </div>
             {/* team 2 */}
-            <div className="bg-myLight flex-auto">
+            <div className="sm:w-[40vw] w-[30vw]">
               <TeamSelection
                 switchAttack={() => setTeam1Attack(!team1Attack)}
                 team="2"

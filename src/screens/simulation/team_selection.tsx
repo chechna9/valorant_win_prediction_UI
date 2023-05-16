@@ -10,6 +10,7 @@ interface props {
   setDispAgents: React.Dispatch<React.SetStateAction<AgentInterface[]>>;
 }
 const TeamSelection: React.FC<props> = (props) => {
+  const flex_direction = props.team === "1" ? "sm:flex-row" : "sm:flex-row-reverse";
   return (
     <div className="flex flex-col items-center">
       <div>
@@ -23,7 +24,7 @@ const TeamSelection: React.FC<props> = (props) => {
         </div>
       </div>
       {/* select agents */}
-      <div>
+      <div className={"flex flex-col flex-wrap " + flex_direction}>
         <AddAgentBox
           dispAgents={props.dispAgents}
           setDispAgents={props.setDispAgents}
