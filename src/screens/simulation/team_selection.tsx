@@ -20,8 +20,9 @@ const TeamSelection: React.FC<props> = (props) => {
         <div>
           <h2 className="text-white font-medium">Attacks first</h2>
           <ToggleSwitch
+          
             checked={props.isAttacker}
-            onClick={props.switchAttack}
+            onChange={props.switchAttack}
           />
         </div>
       </div>
