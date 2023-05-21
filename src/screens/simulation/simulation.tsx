@@ -10,6 +10,8 @@ import Team1Context from "../../utils/contexts/team1_context";
 import Team2Context from "../../utils/contexts/team2_context";
 import MapDropDown from "./map_drop_down";
 import MapInterface from "../../utils/interfaces/map_interface";
+import useSimulate from "../../servies/simulate";
+import simulate from "../../servies/simulate";
 
 const SimulationPage = () => {
   const [loading, setLoading] = useState(false);
@@ -26,6 +28,14 @@ const SimulationPage = () => {
 
   const team1Value = useMemo(() => ({ team1, setTeam1 }), [team1, setTeam1]);
   const team2Value = useMemo(() => ({ team2, setTeam2 }), [team2, setTeam2]);
+
+  const predictWin = async() => {
+    setLoading(true)
+     simulate({team1:team1,team2:team2,firstHalf:team1Attack,map:map.name}).then((res) => {
+      console.log(res);
+      setLoading(false)
+    });
+  };
 
   return (
     <Team1Context.Provider value={team1Value}>
@@ -59,16 +69,14 @@ const SimulationPage = () => {
           </div>
 
           <div className="flex justify-center ">
-            <CustomButton
-              onClick={() => {
-                console.log(team1.agents);
-              }}
-            >
+            <CustomButton onClick={predictWin}>
               {loading && <LoadingSpinner />}
               {!loading && "Simulate"}
             </CustomButton>
           </div>
-          <h1 className="text-white absolute right-2 bottom-2 -rotate-45">Beta</h1>
+          <h1 className="text-white absolute right-2 bottom-2 -rotate-45">
+            Beta
+          </h1>
         </div>
       </Team2Context.Provider>
     </Team1Context.Provider>

@@ -1,5 +1,7 @@
+import { MapsEnum } from "../enums/maps_enum";
+
 interface MapInterface {
-    name: string;
+    name: MapsEnum;
     img: string;
 }
 export default MapInterface ;

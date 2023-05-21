@@ -1,6 +1,6 @@
 export enum AgentEnum {
   jett="jett",
-  chamber="",
+  chamber="chamber",
   sova="sova",
   viper="viper",
   skye="skye",

@@ -10,17 +10,22 @@ interface props {
   setDispAgents: React.Dispatch<React.SetStateAction<AgentInterface[]>>;
 }
 const TeamSelection: React.FC<props> = (props) => {
-  const flex_direction = props.team === "1" ? "sm:flex-row" : "sm:flex-row-reverse";
+  const flex_direction =
+    props.team === "1" ? "sm:flex-row" : "sm:flex-row-reverse";
   return (
     <div className="flex flex-col items-center">
       <div>
-        <h1 className="text-white sm:text-2xl text-md font-bold">Team {props.team}</h1>
-        <div className="mt-2">
-         
+        <h1 className="text-white sm:text-2xl text-md font-bold">
+          Team {props.team}
+        </h1>
+        <div className="mt-2 flex flex-col sm:flex-row items-center justify-center space-x-1">
           <ToggleSwitch
             checked={props.isAttacker}
             onChange={props.switchAttack}
           />
+          <span className="text-[10px] font-medium text-gray-900 dark:text-white">
+            Attacks first
+          </span>
         </div>
       </div>
       {/* select agents */}

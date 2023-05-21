@@ -85,7 +85,7 @@ const AddAgentBox = (props: AddAgentBoxInterface) => {
             }}
           >
             <img
-              className="transition-all  hover:scale-110 duration-300"
+              className="transition-all  hover:scale-110 duration-300 w-[5vw] h-[5vw] max-w-[50px]"
               src={addIcon}
               alt="add agent"
             />

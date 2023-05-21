@@ -25,6 +25,7 @@ import {
   split,
 } from "./assets";
 import { AgentEnum } from "./enums/agents_enum";
+import { MapsEnum } from "./enums/maps_enum";
 import { AgentInterface } from "./interfaces/agent_interface";
 import MapInterface from "./interfaces/map_interface";
 
@@ -99,12 +100,12 @@ const all_agents: Array<AgentInterface> = [
   },
 ];
 const all_maps: Array<MapInterface> = [
-  { name: "Ascent", img: ascent },
-  { name: "Bind", img: bind },
-  { name: "Breeze", img: breeze },
-  { name: "Fracture", img: fracture },
-  { name: "Haven", img: heaven },
-  { name: "Icebox", img: icebox },
-  { name: "Split", img: split },
+  { name: MapsEnum.ascent, img: ascent },
+  { name: MapsEnum.bind, img: bind },
+  { name: MapsEnum.breeze, img: breeze },
+  { name: MapsEnum.fracture, img: fracture },
+  { name: MapsEnum.haven, img: heaven },
+  { name: MapsEnum.icebox, img: icebox },
+  { name: MapsEnum.split, img: split },
 ];
 export { all_maps, all_agents };
