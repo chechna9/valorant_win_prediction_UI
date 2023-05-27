@@ -12,6 +12,7 @@ import MapDropDown from "./map_drop_down";
 import MapInterface from "../../utils/interfaces/map_interface";
 import useSimulate from "../../servies/simulate";
 import simulate from "../../servies/simulate";
+import { error } from "console";
 
 const SimulationPage = () => {
   const [loading, setLoading] = useState(false);
@@ -29,12 +30,22 @@ const SimulationPage = () => {
   const team1Value = useMemo(() => ({ team1, setTeam1 }), [team1, setTeam1]);
   const team2Value = useMemo(() => ({ team2, setTeam2 }), [team2, setTeam2]);
 
-  const predictWin = async() => {
-    setLoading(true)
-     simulate({team1:team1,team2:team2,firstHalf:team1Attack,map:map.name}).then((res) => {
-      console.log(res);
-      setLoading(false)
-    });
+  const predictWin = async () => {
+    setLoading(true);
+    simulate({
+      team1: team1,
+      team2: team2,
+      firstHalf: team1Attack,
+      map: map.name,
+    })
+      .then((res) => {
+        console.log(res);
+        setLoading(false);
+      })
+      .catch((error) => {
+        alert(error);
+        setLoading(false);
+      });
   };
 
   return (
