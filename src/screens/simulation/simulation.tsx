@@ -41,6 +41,8 @@ const SimulationPage = () => {
       map: map.name,
     })
       .then(async (res: any) => {
+        console.log(res);
+        
         const _winChance = res["prediction"] * 100;
         setWinChance(_winChance);
 
