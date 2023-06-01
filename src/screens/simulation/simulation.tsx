@@ -10,11 +10,13 @@ import Team1Context from "../../utils/contexts/team1_context";
 import Team2Context from "../../utils/contexts/team2_context";
 import MapDropDown from "./map_drop_down";
 import MapInterface from "../../utils/interfaces/map_interface";
-import useSimulate from "../../servies/simulate";
 import simulate from "../../servies/simulate";
-import { error } from "console";
+import AnimatedBar from "./animated_bar";
 
 const SimulationPage = () => {
+  // states
+  const [winChance, setWinChance] = useState<number | undefined>(undefined);
+
   const [loading, setLoading] = useState(false);
   const [team1Attack, setTeam1Attack] = useState(false);
   const [map, setMap] = useState<MapInterface>(all_maps[0]);
@@ -38,8 +40,10 @@ const SimulationPage = () => {
       firstHalf: team1Attack,
       map: map.name,
     })
-      .then((res) => {
-        console.log(res);
+      .then(async (res: any) => {
+        const _winChance = res["prediction"] * 100;
+        setWinChance(_winChance);
+
         setLoading(false);
       })
       .catch((error) => {
@@ -78,7 +82,22 @@ const SimulationPage = () => {
               />
             </div>
           </div>
-
+          {/* result */}
+          {winChance && (
+            <div className="flex flex-col w-full">
+              <div className="flex justify-evenly">
+                <h1 className="text-white text-xl text-center">
+                  {winChance.toFixed(2)}%
+                </h1>
+  
+                <h1 className="text-white text-xl text-center">
+                  {(100 - winChance).toFixed(2)}%
+                </h1>
+              </div>
+              <AnimatedBar winChance={winChance} />
+            </div>
+          )}
+          {/* simulate */}
           <div className="flex justify-center ">
             <CustomButton onClick={predictWin}>
               {loading && <LoadingSpinner />}

@@ -39,11 +39,9 @@ const simulate = (props:simulateInterface)=>new Promise((resolve, reject) => {
         data:_data,
       })
       .then((response) => {
-        console.log(response.data);
-        resolve([response.data]);
+        resolve(response.data);
       })
       .catch((err) => {
-        console.log(err);
         reject(err);
       });
  
