@@ -41,8 +41,6 @@ const SimulationPage = () => {
       map: map.name,
     })
       .then(async (res: any) => {
-        console.log(res);
-        
         const _winChance = res["prediction"] * 100;
         setWinChance(_winChance);
 
@@ -91,7 +89,7 @@ const SimulationPage = () => {
                 <h1 className="text-white text-xl text-center">
                   {winChance.toFixed(2)}%
                 </h1>
-  
+
                 <h1 className="text-white text-xl text-center">
                   {(100 - winChance).toFixed(2)}%
                 </h1>

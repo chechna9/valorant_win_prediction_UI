@@ -29,7 +29,7 @@ const simulate = (props:simulateInterface)=>new Promise((resolve, reject) => {
   }
 
   
-  const hosted = "http://127.0.0.1:5000";
+  const hosted = "https://valorant-pred-api.onrender.com";
   
     axios
       .post(hosted + "/predict", {
