@@ -1,5 +1,5 @@
 
-
+import valoImage from 'valoImage.png'
 
 const LandingPage = ()=>{
     return (
