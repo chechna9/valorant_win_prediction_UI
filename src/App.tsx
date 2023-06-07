@@ -1,10 +1,10 @@
 import './App.css';
-import SimulationPage from './screens/simulation/simulation';
+import LandingPage from './screens/landing';
 
 function App() {
   return (
    <>
-   <SimulationPage/>
+   <LandingPage/>
    </>
   );
 }
