@@ -5,6 +5,7 @@ import LandingPage from './screens/landing';
 
 
 export default function App() {
+
   return (
     <BrowserRouter>
       <Routes>

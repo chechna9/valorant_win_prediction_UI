@@ -29,7 +29,7 @@ const LandingPage = ()=>{
                 </p>
             </div>
 
-            <img src={valoImage} className="md:hero-image md:w-2/5 w-3/4 pb-12 xl:p-0 mx-auto my-auto transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:-translate-x-1 hover:-translate-y-1" alt="Valorant" />
+            <img src={valoImage} className="md:hero-image md:w-2/5 w-3/4 mb-12 xl:p-0 mx-auto my-auto transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:-translate-x-1 hover:-translate-y-1" alt="Valorant" />
         </div>
         {/* action btn */}
           {/* simulate */}
@@ -46,30 +46,41 @@ const LandingPage = ()=>{
       <h3 className='font-bold pb-6'>It's Open Source! </h3>
       <div className='max-w-fit mx-auto'>
         <div className="grid justify-around grid-cols-1 gap-4 sm:grid-cols-2 ">
-          <div className="bg-myDark2 lg:w-64 w-32 lg:h-64 h-32 lg:p-8 p-2 grid content-stretch transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:-translate-x-1 hover:-translate-y-1">
-            <img src={githubImage} className="lg:h-full h-3/4 mx-auto " alt="Github" />
+          <Link to='https://github.com/chechna9/valorant_win_prediction_UI'>
+            <div  data-aos="fade-right" className="bg-myDark2 lg:w-64 w-32 lg:h-64 h-32 lg:p-8 p-2 grid content-stretch transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:-translate-x-1 hover:-translate-y-1">
+              <img src={githubImage} className="lg:h-full h-3/4 mx-auto " alt="Github" />
+              
+              <h3 className='font-bold text-xs lg:text-sm w-full text-center mt-auto'>Source Code</h3>
+            </div>
+          </Link>
+          <Link to="">
+            <div className="bg-myDark2  lg:w-64 w-32 lg:h-64 h-32 p-2 grid content-stretch transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:translate-x-1 hover:-translate-y-1">
+              <img src={gcolabImage} className="h-full mx-auto" alt="CO" />
+              <h3 className='font-bold text-xs lg:text-sm w-full text-center lg:mt-6 mt-auto'>NoteBook</h3>
+            </div>
+          </Link>
+          <Link to="">
+            <div className="bg-myDark2  lg:w-64 w-32 lg:h-64 h-32 lg:p-8 p-2 grid content-stretch  transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:-translate-x-1 hover:translate-y-1">
             
-            <h3 className='font-bold text-xs lg:text-sm w-full text-center mt-auto'>Source Code</h3>
-          </div>
-          <div className="bg-myDark2  lg:w-64 w-32 lg:h-64 h-32 p-2 grid content-stretch transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:translate-x-1 hover:-translate-y-1">
-            <img src={gcolabImage} className="h-full mx-auto" alt="CO" />
-            <h3 className='font-bold text-xs lg:text-sm w-full text-center lg:mt-6 mt-auto'>NoteBook</h3>
-          </div>
-          <div className="bg-myDark2  lg:w-64 w-32 lg:h-64 h-32 lg:p-8 p-2 grid content-stretch  transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:-translate-x-1 hover:translate-y-1">
-          {/* <img src={driveImage} className="h-full mx-auto " alt="Drive" /> */}
-            <div className="h-full mx-auto flex flex-col justify-center">
-              <img src={driveImage} className=' h-2/3' alt="Drive" />
+              <div className="h-full mx-auto flex flex-col justify-center">
+                <img src={driveImage} className=' h-2/3' alt="Drive" />
+              </div>
+              <h3 className='font-bold text-xs lg:text-sm w-full text-center  mt-auto '>Project Report</h3>
             </div>
-            <h3 className='font-bold text-xs lg:text-sm w-full text-center  mt-auto '>Project Report</h3>
-          </div>
-          <div className="bg-myDark2  lg:w-64 w-32 lg:h-64 h-32 lg:p-8 p-2 grid content-stretch transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:translate-x-1 hover:translate-y-1">
-            <div className="h-full mx-auto flex flex-col justify-end">
-              <img src={kaggleImage} alt="Kaggle" />
+          </Link>
+          
+          <Link to="https://www.kaggle.com/datasets/visualize25/valorant-pro-matches-full-data">
+            <div className="bg-myDark2  lg:w-64 w-32 lg:h-64 h-32 lg:p-8 p-2 grid content-stretch transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:translate-x-1 hover:translate-y-1">
+              <div className="h-full mx-auto flex flex-col justify-end">
+                <img src={kaggleImage} alt="Kaggle" />
+              </div>
+              <h3 className='font-bold text-xs lg:text-sm w-full text-center mt-auto'>Dataset</h3>
             </div>
-            <h3 className='font-bold text-xs lg:text-sm w-full text-center mt-auto'>Dataset</h3>
-          </div>
+          </Link>
         </div>
       </div>
+
+
         </div>
         <div className='min-h-screen w-screen lg:px-48 px-10 lg:pt-10 pt-6 lg:text-left lg:text-3xl sm:text-2xl text-xl text-center'>
       <h3 className='font-bold pb-6'>Made With Coffee By</h3>
@@ -80,15 +91,20 @@ const LandingPage = ()=>{
             <h3 className='font-bold text-xs lg:text-sm w-full text-center lg:mt-10 mt-2'>Ahmed Yacine Bouchouareb</h3>
           </div>
             </Link>
+
             <Link to='https://github.com/amir-coder'>
               <div className="h-full p-2 mx-10 grid content-start bg-myDark2 transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:translate-x-1 hover:translate-y-1">
                 <img src={amir} className="h-full mx-auto" alt="Amir" />
                 <h3 className='font-bold text-xs lg:text-sm w-full text-center lg:mt-10 mt-2'>Amir Almamma</h3>
               </div>
             </Link>
-          </div>
+
+      </div>
         </div>
-      </div>     
+
+
+      </div>
+      
     );
 }
 
