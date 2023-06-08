@@ -76,14 +76,21 @@ const LandingPage = ()=>{
         <div className='min-h-screen w-screen lg:px-48 px-10 lg:pt-10 pt-6 lg:text-left lg:text-3xl sm:text-2xl text-xl text-center'>
       <h3 className='font-bold pb-6'>Made With Coffee By</h3>
       <div className='grid grid-cols-1 lg:gap-20 gap-4 lg:grid-cols-2 h-full justify-between'>
-          <div className="h-full p-2 mx-10 grid content-start bg-myDark2 transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:translate-x-1 hover:translate-y-1">
+      <Link to="https://github.com/chechna9">
+      <div className="h-full p-2 mx-10 grid content-start bg-myDark2 transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:translate-x-1 hover:translate-y-1">
             <img src={yacine} className="h-fill mx-auto" alt="Yacine" />
             <h3 className='font-bold text-xs lg:text-sm w-full text-center lg:mt-10 mt-2'>Ahmed Yacine Bouchouareb</h3>
           </div>
-          <div className="h-full p-2 mx-10 grid content-start bg-myDark2 transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:translate-x-1 hover:translate-y-1">
+            </Link>
+
+
+<Link to='https://github.com/amir-coder'>
+<div className="h-full p-2 mx-10 grid content-start bg-myDark2 transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:translate-x-1 hover:translate-y-1">
             <img src={amir} className="h-full mx-auto" alt="Amir" />
             <h3 className='font-bold text-xs lg:text-sm w-full text-center lg:mt-10 mt-2'>Amir Almamma</h3>
           </div>
+</Link>
+
       </div>
         </div>
 
