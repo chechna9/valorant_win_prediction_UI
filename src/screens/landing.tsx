@@ -28,7 +28,7 @@ const LandingPage = ()=>{
                 <span className='font-bold bg-red'> Perfect</span> Valorant stack based on the <span className='font-bold bg-red'>Artificial Intelligence</span>
                 </p>
             </div>
-            <img src={valoImage} className="md:hero-image md:w-2/5 w-3/4 pb-12 lg:p-0" alt="logo" />
+            <img src={valoImage} className="md:hero-image md:w-2/5 w-3/4 pb-12 lg:p-0 mx-auto bloc" alt="Valorant" />
         </div>
         {/* action btn */}
           {/* simulate */}
