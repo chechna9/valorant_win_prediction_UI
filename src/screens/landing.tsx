@@ -45,9 +45,9 @@ const LandingPage = ()=>{
       <div className='max-w-fit mx-auto'>
         <div className="grid justify-around grid-cols-1 gap-4 sm:grid-cols-2 ">
           <div className="bg-myDark2 lg:w-64 w-32 lg:h-64 h-32 lg:p-8 p-2 grid content-stretch">
-            <img src={githubImage} className="h-full mx-auto " alt="Github" />
+            <img src={githubImage} className="lg:h-full h-3/4 mx-auto " alt="Github" />
             
-            <h3 className='font-bold text-xs lg:text-sm w-full text-center bg-myDark mt-auto'>Source Code</h3>
+            <h3 className='font-bold text-xs lg:text-sm w-full text-center mt-auto'>Source Code</h3>
           </div>
           <div className="bg-myDark2  lg:w-64 w-32 lg:h-64 h-32 p-2 grid content-stretch">
             <img src={gcolabImage} className="h-full mx-auto" alt="CO" />
@@ -55,21 +55,17 @@ const LandingPage = ()=>{
           </div>
           <div className="bg-myDark2  lg:w-64 w-32 lg:h-64 h-32 lg:p-8 p-2 grid content-stretch">
           {/* <img src={driveImage} className="h-full mx-auto " alt="Drive" /> */}
-            <div className="h-full mx-auto flex flex-col justify-center bg-myDark">
-              <img src={driveImage} className=' h-full' alt="Drive" />
+            <div className="h-full mx-auto flex flex-col justify-center">
+              <img src={driveImage} className=' h-2/3' alt="Drive" />
             </div>
             <h3 className='font-bold text-xs lg:text-sm w-full text-center  mt-auto'>Project Report</h3>
           </div>
           <div className="bg-myDark2  lg:w-64 w-32 lg:h-64 h-32 lg:p-8 p-2 grid content-stretch">
-            <div className="h-full mx-auto flex flex-col justify-center">
+            <div className="h-full mx-auto flex flex-col justify-end">
               <img src={kaggleImage} alt="Kaggle" />
             </div>
-            <h3 className='font-bold text-xs lg:text-sm w-full text-center  mt-auto'>Dataset</h3>
+            <h3 className='font-bold text-xs lg:text-sm w-full text-center mt-auto'>Dataset</h3>
           </div>
-          {/* <div className="bg-myDark2  lg:w-64 w-32 lg:h-64 h-32 p-2 grid content-stretch">
-            <img src={kaggleImage} className="w-full mx-auto bg-myDark" alt="Kaggle" />
-            <h3 className='font-bold text-xs lg:text-sm w-full text-center lg:mt-6 mt-auto bg-myDark'>Dataset</h3>
-          </div> */}
         </div>
       </div>
 
