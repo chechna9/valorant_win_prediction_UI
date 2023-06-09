@@ -53,13 +53,13 @@ const LandingPage = ()=>{
               <h3 className='font-bold text-xs lg:text-sm w-full text-center mt-auto'>Source Code</h3>
             </div>
           </Link>
-          <Link to="">
+          <Link to="https://colab.research.google.com/drive/1MVprbFWZdsekNWEDvaG_SpssAZBv4Fcc?usp=chrome_ntp">
             <div className="bg-myDark2  lg:w-64 w-32 lg:h-64 h-32 p-2 grid content-stretch transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:translate-x-1 hover:-translate-y-1">
               <img src={gcolabImage} className="h-full mx-auto" alt="CO" />
               <h3 className='font-bold text-xs lg:text-sm w-full text-center lg:mt-6 mt-auto'>NoteBook</h3>
             </div>
           </Link>
-          <Link to="">
+          <Link to="https://drive.google.com/file/d/1cE_K2Z_5YfB_UlVJTR7jioFd_h7TjX5O/view?usp=sharing">
             <div className="bg-myDark2  lg:w-64 w-32 lg:h-64 h-32 lg:p-8 p-2 grid content-stretch  transition-all duration-200 hover:shadow-myDark2 shadow-myDark2 hover:shadow-[5px_5px] hover:-translate-x-1 hover:translate-y-1">
             
               <div className="h-full mx-auto flex flex-col justify-center">
