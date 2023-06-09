@@ -17,15 +17,15 @@ const LandingPage = ()=>{
             Beta
           </h1>
       <header className=' w-full'>
-        <div className="hero flex align-middle flex-wrap-reverse w-screen lg:px-48 px-10 lg:pt-48 pt-24">
+        <div className="hero flex align-middle flex-wrap-reverse w-screen lg:px-48 px-10 xl:pt-48 pt-24">
           {/* Header */}
             <div className='xl:w-1/2 xl:pr-10 xl:text-left xl:text-3xl sm:text-2xl text-xl text-center '>
               <h3 className='font-bold pb-6'>About The project: </h3>
               <p>
                 Find your 
-                <span className='font-bold bg-red'> Perfect</span> Valorant stack based on the <span className='font-bold bg-red'>Artificial Intelligence </span>
-                Find your 
-                <span className='font-bold bg-red'> Perfect</span> Valorant stack based on the <span className='font-bold bg-red'>Artificial Intelligence</span>
+                <span className='font-bold bg-red'> Perfect</span> Valorant stack using <span className='font-bold bg-red'>Artificial Intelligence. </span>
+                The objective of this model is to <span className='font-bold bg-red'>estimate the probability of a team winning </span>a Valorant match based on match characteristics.
+                {/* <span className='font-bold bg-red'> Perfect</span> Valorant stack based on the <span className='font-bold bg-red'>Artificial Intelligence</span> */}
                 </p>
             </div>
 
@@ -33,7 +33,7 @@ const LandingPage = ()=>{
         </div>
         {/* action btn */}
           {/* simulate */}
-          <div className="flex justify-center py-32">
+          <div className="flex justify-center xl:py-20 py-10">
             <Link to="/">
               <CustomButton>
                 Try It Now!
