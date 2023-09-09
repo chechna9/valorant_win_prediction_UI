@@ -1,47 +1,60 @@
 backend repo : https://github.com/chechna9/valorant_win_prediction_server
-# Getting Started with Create React App
+# Valorant Win Prediction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Valorant Win Prediction](https://res.cloudinary.com/dmgeaamqy/image/upload/v1686423062/portfolioAssets/projects/valoPred_cdly2n.png)
 
-## Available Scripts
+Valorant Win Prediction is a web application that utilizes an AI model to predict the win chances of two teams in the popular game Valorant. Whether you're a player or a fan, this tool can provide insights into the possible outcome of a match.
 
-In the project directory, you can run:
+## Table of Contents
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `yarn start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Win Chance Prediction:** The app predicts the win chance for two teams based on an AI model's analysis.
+- **Valorant Data Analysis:** Utilizes game data and statistics to make accurate predictions.
+- **User-Friendly Interface:** An intuitive design for easy input and result interpretation.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technologies Used
 
-### `yarn test`
+- React: A JavaScript library for building user interfaces.
+- Flask: A micro web framework for building web applications.
+- scikit-learn (sklearn): A machine learning library for Python used for creating the AI model.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `yarn build`
+To get started with Valorant Win Prediction, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone this repository to your local machine.
+2. Navigate to the project root folder.
+3. Set up the Flask server (instructions in the `server` directory).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can access Valorant Win Prediction by visiting the [web application](https://valorant-win-prediction.vercel.app/).
 
-### `yarn eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Open the Valorant Win Prediction web application.
+2. Input relevant match data (e.g., team statistics, map, etc.).
+3. Obtain the predicted win chance for each team.
+4. Use this prediction as a valuable insight for Valorant matches.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Contributions to Valorant Win Prediction are welcome! If you'd like to contribute, please follow these guidelines:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and ensure that the code is well-documented.
+4. Open a pull request describing your changes.
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute this software.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
